@@ -5,6 +5,7 @@ Author: Lev Goryachev, https://github.com/lev-goryachev
 Created On: 24.10.2023
 Description: codewars kata https://www.codewars.com/kata/52597aa56021e91c93000cb0/train/javascript
 Changes: 24.10.2023 - started
+24.10.2023 - done
 
 */
 /* Description
@@ -29,8 +30,28 @@ describe("Tests", () => {
 */
 
 function moveZeros(arr) {
-  return;
+  let arrOther = [];
+  let arrZero = [];
+  arr.forEach(function (el, _i, _arr) {
+    el === 0 ? arrZero.push(el) : arrOther.push(el);
+  });
+  return [...arrOther, ...arrZero];
 }
+
+/* best solution from codewars
+
+var moveZeros = function (arr) {
+  return arr.filter(function(x) {return x !== 0}).concat(arr.filter(function(x) {return x === 0;}));
+}
+
+var moveZeros = function (arr) {
+  return [
+    ...(arr.filter(n => n !== 0)),
+    ...(arr.filter(n => n === 0))
+  ];
+}
+
+*/
 
 console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]));
 console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
