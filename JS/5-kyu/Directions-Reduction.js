@@ -6,6 +6,7 @@ Author: Lev Goryachev, https://github.com/lev-goryachev
 Created On: 31.10.2023
 Description: codewars kata https://www.codewars.com/kata/550f22f4d758534c1100025a/train/javascript
 Changes: 31.10.2023 - started
+31.10.2023 - done
 
 */
 /* Description
