@@ -5,53 +5,65 @@
 # Note: If the number is a multiple of both 3 and 5, only count it once.
 
 def solution(number):
-    # check not negative, not 3 or 5
-    if number <= 0 or number == 3 or number == 5:
-        return 0
-
-    # define initial values
-    list_sum = []
-
-    # main loop
-    while number >= 3:
-        print(f"Number is {number}")
-        # 3 and 5
-        if number % 3 == 0 and number % 5 == 0:
-            list_sum.append(number)
-            number -= 1
-            print(f"3 and 5, new number {number}")
-            pass
-
-        # 3 not 5
-        if number % 3 == 0 and number % 5 != 0:
-            list_sum.append(number)
-            number -= 1
-            print(f"3 not 5, new number {number}")
-            pass
-
-        # 5 not 3
-        if number % 3 != 0 and number % 5 == 0:
-            list_sum.append(number)
-            number -= 1
-            print(f"5 not 3, new number {number}")
-            pass
-
-    # output
-    return sum(list_sum)
+    return sum(x for x in range(number) if x % 3 == 0 or x % 5 == 0)
 
 
-print(solution(6), 8)
-print(solution(4), 3)
-print(solution(16), 60)
-print(solution(3), 0)
-print(solution(5), 3)
-print(solution(15), 45)
-print(solution(0), 0)
-print(solution(-1), 0)
-print(solution(10), 23)
-print(solution(20), 78)
-print(solution(200), 9168)
+# def solution(number):
+#     # number -= 1
 
+#     # check not negative, not 3 or 5
+#     if number <= 0 or number == 3:
+#         print(f"num is 0 or 3")
+#         return 0
+
+#     # define initial values
+#     list_sum = []
+#     x = number - 1
+
+#     # main loop
+#     while x >= 3:
+#         print(f"Number is {x}")
+#         # 3 and 5
+#         if x % 3 == 0 and x % 5 == 0:
+#             list_sum.append(x)
+#             x -= 1
+#             print(f"3 and 5, new number {x}")
+#             pass
+
+#         # 3 not 5
+#         if x % 3 == 0 and x % 5 != 0:
+#             list_sum.append(x)
+#             x -= 1
+#             print(f"3 not 5, new number {x}")
+#             pass
+
+#         # 5 not 3
+#         if x % 3 != 0 and x % 5 == 0:
+#             list_sum.append(x)
+#             x -= 1
+#             print(f"5 not 3, new number {x}")
+#             pass
+
+#         else:
+#             x -= 1
+
+#     # output
+#     print(f"list --> {list_sum}")
+#     return sum(list_sum)
+
+# print(solution(6), 8)
+
+# print(solution(15), 45)
+# print(solution(0), 0)
+# print(solution(-1), 0)
+# print(solution(10), 23)
+# print(solution(20), 78)
+# print(solution(200), 9168)
+
+# print(solution(5), 3)
+# print(solution(3), 0)
+# print(solution(4), 3)
+# print(solution(16), 60)
 
 #################################
 
